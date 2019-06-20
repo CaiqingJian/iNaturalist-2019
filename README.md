@@ -30,7 +30,7 @@ python fine-tune.py --pretrained-model model/resnet-152 \
 
 please adjust `--gpus` and `--batch-size` according to the machine configuration. A sample calculation: `batch-size = 12` can use 8 GB memory on a GTX 1080, so `--batch-size 48` is good for a 4-GPU machine.
 
-Please have internet connection for the first time run because needs to download the pretrained model from <http://data.mxnet.io/models/imagenet-11k/resnet-152/>. If the machine has no internet connection, please download the corresponding model files from other machines, and ship to `model/` directory.
+Please have internet connection for the first time run because needs to download the pretrained model from https://gluon-cv.mxnet.io/model_zoo/classification.html#resnet. If the machine has no internet connection, please download the corresponding model files from other machines, and ship to `model/` directory. Note that I have prepared the pretrained models and the corresponding parameters file in filefolder'./model', and you can feel free to use them.
 
 ### Generate submission file
 
@@ -48,11 +48,11 @@ Fine-tune method starts with loading a pretrained ResNet 152 layers (Imagenet 11
 
 The key technique is from `lr_step_epochs` where we assign a small learning rate and less regularizations when approach to certain epochs. In this example, we give `lr_step_epochs='10,20'` which means the learning rate changes slower when approach to 10th and 20th epoch, so the fine-tune procedure can converge the network and learn from the provided new samples. A similar thought is applied to the data augmentations where fine tune is given less augmentation. This technique is described in Mu's thesis <http://www.cs.cmu.edu/~muli/file/mu-thesis.pdf> 
 
-This pipeline is not limited to ResNet-152 pretrained model. Please experiment the fine tune method with other models, like ResNet 101, Inception, from MXNet's model zoo <http://data.mxnet.io/models/> by following this tutorial <http://mxnet.io/how_to/finetune.html> and this sample code <https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py> . Please feel free submit issues and/or pull requests and/or discuss on the Kaggle forum if have better results.
+This pipeline is not limited to ResNet-152 pretrained model. Please experiment the fine tune method with other models, like ResNet 101, Inception, from MXNet's model zoo https://gluon-cv.mxnet.io/model_zoo/index.html by following this tutorial <http://mxnet.io/how_to/finetune.html> and this sample code <https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py> . Please feel free submit issues and/or pull requests and/or discuss on the Kaggle forum if have better results.
 
 ## Reference
 
-* MXNet's model zoo <http://data.mxnet.io/models/>
+* MXNet's model zoo https://gluon-cv.mxnet.io/model_zoo/index.html
 * MXNet fine tune <http://mxnet.io/how_to/finetune.html> <https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py>
 * Mu Li's thesis <http://www.cs.cmu.edu/~muli/file/mu-thesis.pdf> 
-* iNaturalist Challenge at FGVC 2019 <https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2019/>
+* iNaturalist Challenge at FGVC 2019 https://www.kaggle.com/c/inaturalist-2019-fgvc6/overview

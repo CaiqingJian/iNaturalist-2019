@@ -1,5 +1,5 @@
 # iNaturalist-2019
-MXNet fine-tune baseline script (resnet 152 layers) for iNaturalist Challenge at FGVC 2019, public LB score 0.20592 ,private LB 0.20545
+MXNet fine-tune baseline script (resnet 152 layers) for iNaturalist Challenge at FGVC 2019, public LB score 0.20592 ,private LB score 0.20545
 ## How to use
 
 ### Install MXNet 
@@ -25,7 +25,7 @@ python fine-tune.py --pretrained-model model/resnet-152 \
     --load-epoch 0 --gpus 0,1,2,3 \
     --model-prefix model/iNat-resnet-152 \
 	--data-nthreads 48 \
-    --batch-size 48 --num-classes 5089 --num-examples 579184
+    --batch-size 48 --num-classes 1010 --num-examples 265213
 ```
 
 please adjust `--gpus` and `--batch-size` according to the machine configuration. A sample calculation: `batch-size = 12` can use 8 GB memory on a GTX 1080, so `--batch-size 48` is good for a 4-GPU machine.
@@ -55,4 +55,4 @@ This pipeline is not limited to ResNet-152 pretrained model. Please experiment t
 * MXNet's model zoo <http://data.mxnet.io/models/>
 * MXNet fine tune <http://mxnet.io/how_to/finetune.html> <https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py>
 * Mu Li's thesis <http://www.cs.cmu.edu/~muli/file/mu-thesis.pdf> 
-* iNaturalist Challenge at FGVC 2017 <https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2017/>
+* iNaturalist Challenge at FGVC 2019 <https://www.kaggle.com/c/inaturalist-challenge-at-fgvc-2019/>

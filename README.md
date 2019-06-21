@@ -18,17 +18,17 @@ A good way to speed up training is maximizing the IO by using `.rec` format, whi
 
 ### Train
 
-Run `sh run.sh` which looks like (a 4 GTX 1080 machine for example):
+Run `sh run.sh` which looks like (NVIDIA Tesla V100 32GB machine for example):
 
 ```
 python fine-tune.py --pretrained-model model/resnet-152 \
-    --load-epoch 0 --gpus 0,1,2,3 \
+    --load-epoch 0 --gpus 0 \
     --model-prefix model/iNat-resnet-152 \
 	--data-nthreads 48 \
-    --batch-size 48 --num-classes 1010 --num-examples 265213
+    --batch-size 85 --num-classes 1010 --num-examples 265213
 ```
 
-please adjust `--gpus` and `--batch-size` according to the machine configuration. A sample calculation: `batch-size = 12` can use 8 GB memory on a GTX 1080, so `--batch-size 48` is good for a 4-GPU machine.
+please adjust `--gpus` and `--batch-size` according to the machine configuration. A sample calculation: `batch-size = 85` can use 24 GB memory on a NVIDIA Tesla V100, or if you have a GTX 1080 `--batch-size 12` is ok.
 
 Please have internet connection for the first time run because needs to download the pretrained model from https://gluon-cv.mxnet.io/model_zoo/classification.html#resnet. If the machine has no internet connection, please download the corresponding model files from other machines, and ship to `model/` directory. Note that I have prepared the pretrained models and the corresponding parameters file in filefolder'./model', and you can feel free to use them.
 

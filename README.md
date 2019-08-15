@@ -1,4 +1,5 @@
 # iNaturalist-2019
+I refer to https://github.com/phunterlau/iNaturalist, and adjust some settings to fit to FGVC 2019.
 MXNet fine-tune baseline script (resnet 152 layers) for iNaturalist Challenge at FGVC 2019, public LB score 0.20592 ,private LB score 0.20545
 ## How to use
 
@@ -53,6 +54,7 @@ This pipeline is not limited to ResNet-152 pretrained model. Please experiment t
 ## Reference
 
 * MXNet's model zoo https://gluon-cv.mxnet.io/model_zoo/index.html
+* https://github.com/phunterlau/iNaturalist
 * MXNet fine tune <http://mxnet.io/how_to/finetune.html> <https://github.com/dmlc/mxnet/blob/master/example/image-classification/fine-tune.py>
 * Mu Li's thesis <http://www.cs.cmu.edu/~muli/file/mu-thesis.pdf> 
 * iNaturalist Challenge at FGVC 2019 https://www.kaggle.com/c/inaturalist-2019-fgvc6/overview
